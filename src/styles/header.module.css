@@ -1,0 +1,32 @@
+.Header {
+  width: 100%;
+  padding-top: 1.5rem;
+  border-bottom: 1px solid #979696;
+}
+
+.Header ul {
+  display: flex;
+  list-style: none;
+  margin: auto;
+  justify-content: center;
+}
+
+.Header button {
+  margin: 0 1rem;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  font-size: .9rem;
+}
+
+.Header button p {
+    margin-left: .4rem;
+}
+.Count {
+    border-radius: 50%;
+    background-color: #d3cbcb;
+    padding: .4rem;
+    font-size: .6rem;
+}
+

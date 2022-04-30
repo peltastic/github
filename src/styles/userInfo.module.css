@@ -1,0 +1,59 @@
+.UserInfo {
+  /* border: 1px solid black; */
+  width: 30%;
+  padding-left: 4rem;
+  line-height: 0;
+}
+
+.UserInfo button {
+  padding: 0.5rem 9rem;
+  outline: none;
+  border: 1px solid #a6a5a5;
+  background-color: #eae9e9;
+  border-radius: 6px;
+  margin-bottom: .5rem;
+}
+.ImageContainer {
+  margin-top: -2rem;
+}
+
+.ProfilePic {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background-position: center;
+}
+
+.UserName {
+  line-height: 0.2;
+  color: #a9a9a9;
+}
+.DisplayName {
+  line-height: 0.2;
+}
+
+.FollowersInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.FollowersInfo span {
+    font-weight: bold;
+    margin: 0 .3rem;
+    color: black;
+}
+.FollowersInfo p {
+    color: #8e8d8d;
+}
+.Flex {
+  display: flex;
+  align-items: center;
+}
+
+.Bio {
+    margin-bottom: 1rem;
+}
+
+.Icon {
+  margin-right: .5rem;
+}

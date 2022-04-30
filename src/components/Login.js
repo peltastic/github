@@ -1,11 +1,13 @@
-// import dotenv from "dotenv";
-// dotenv.config();
+import classes from "../styles/login.module.css"
+import {BsGithub} from "react-icons/bs"
+import {Config} from "../config/config"
 function Login() {
-  console.log(process.env);
+  console.log(Config)
   return (
-    <div className="">
-      <a href="https://github.com/login/oauth/authorize?client_id=ede2211fe6532022063f&redirect_uri=http://localhost:3000/callback">
-        heyyyy
+    <div className={classes.Login}>
+      <BsGithub className={classes.Icon}/>
+      <a className={classes.Link} href={`https://github.com/login/oauth/authorize?client_id=${Config.CLIENT_ID}&redirect_uri=${Config.CALLBACK_URI}`}>
+        LOGIN
       </a>
     </div>
   );

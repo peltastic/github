@@ -1,0 +1,27 @@
+.ImageLoader {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background-color: rgb(233, 232, 232);
+  margin-bottom: 2rem;
+}
+
+.LongLoader {
+  width: 15rem;
+  height: 1rem;
+  background-color: rgb(233, 232, 232);
+  margin-bottom: 1rem;
+}
+
+.ShortLoader {
+  width: 10rem;
+  height: 1rem;
+  background-color: rgb(233, 232, 232);
+  margin-bottom: 2rem;
+}
+.MidLoader {
+  width: 12rem;
+  height: 1rem;
+  background-color: rgb(233, 232, 232);
+  margin-bottom: .5rem;
+}

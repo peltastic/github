@@ -1,7 +1,7 @@
 import classes from "../styles/header.module.css";
 import { BsBook } from "react-icons/bs";
-import { RiGitRepositoryLine, RiStarSLine } from "react-icons/ri";
-import { AiOutlineProject } from "react-icons/ai";
+import { RiGitRepositoryLine } from "react-icons/ri";
+import { AiOutlineProject, AiOutlineStar } from "react-icons/ai";
 import { FiPackage } from "react-icons/fi";
 function Header() {
   return (
@@ -34,7 +34,7 @@ function Header() {
         </li>
         <li>
           <button>
-            <RiStarSLine />
+            <AiOutlineStar />
             <p>Stars</p>
           </button>
         </li>

@@ -1,0 +1,24 @@
+.Login {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 50%;
+}
+.Icon {
+  display: block;
+  margin: auto;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.Link {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+}
+
+.Link:visited {
+  color: white;
+}

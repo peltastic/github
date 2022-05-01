@@ -1,16 +1,25 @@
 .Repo {
-  border-bottom: 1px solid #969696;
+  border-bottom: 1px solid #bdbcbca4;
   display: flex;
   align-items: center;
-  line-height: 0;
   margin-top: 2rem;
   padding: 0 2rem;
+  padding: 1rem;
 }
 
 .RepoName {
   color: #4242e3;
   margin-right: 0.7rem;
+  font-size: 1.7rem;
+  margin-bottom: .5rem;
+  display: block;
 }
+
+/* @media (max-width: 1000px) {
+  .RepoName{
+    font-size: 1.3rem;
+  }
+} */
 
 .Flex {
   display: flex;
@@ -20,15 +29,16 @@
 .Public {
   border-radius: 10rem;
   border: 1px solid #696969;
-  padding: 0.4rem 0.5rem;
+  padding: 0.5rem 0.7rem;
   font-size: 0.7rem;
   color: #666565;
   font-size: bold;
+  margin-bottom: .5rem;
 }
 
 .Desc {
   margin-top: 0.7rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .Language {
@@ -38,7 +48,7 @@
 .Star {
   display: flex;
   align-items: center;
-  margin: 1rem;
+  margin-right: 1rem;
 }
 
 .Details {
@@ -57,7 +67,7 @@
   align-items: center;
   padding: .2rem .4rem;
   border: 1px solid #979393;
-  border-radius: 7px;
+  border-radius: 5px;
   /* background-color: ; */
 }
 
@@ -68,3 +78,16 @@
   margin-left: .2rem;
   margin-right: .4rem;
 }
+
+.Fork {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+.Color {
+  width: .9rem;
+  height: .9rem;
+  border-radius: 50%;
+  margin-right: .2rem;
+}
+

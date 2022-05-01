@@ -1,0 +1,10 @@
+.Profile {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+    .Profile {
+        justify-content: center;
+    }
+}

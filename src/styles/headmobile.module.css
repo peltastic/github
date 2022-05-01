@@ -1,16 +1,17 @@
-.Header {
+.HeaderMobile {
   width: 100%;
   padding-top: 1.5rem;
   border-bottom: 1px solid #979696;
+  display: none;
 }
 
-@media (max-width: 800px)  {
-  .Header {
-    display: none;
+@media (max-width: 800px) {
+  .HeaderMobile {
+    display: block;
   }
 }
 
-.Header ul {
+.HeaderMobile ul {
   display: flex;
   list-style: none;
   margin: auto;
@@ -18,12 +19,17 @@
 }
 
 @media (max-width: 1250px) {
-  .Header ul {
+  .HeaderMobile ul {
     margin-left: 15rem;
   }
 }
+@media (max-width: 800px) {
+  .HeaderMobile ul {
+    margin-left: 0;
+  }
+}
 
-.Header button {
+.HeaderMobile button {
   margin: 0 1rem;
   border: none;
   background: transparent;
@@ -33,7 +39,7 @@
   padding-bottom: 0.5rem;
 }
 
-.Header button p {
+.HeaderMobile button p {
   margin-left: 0.4rem;
 }
 .Count {

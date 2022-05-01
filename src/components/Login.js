@@ -2,7 +2,6 @@ import classes from "../styles/login.module.css"
 import {BsGithub} from "react-icons/bs"
 import {Config} from "../config/config"
 function Login() {
-  console.log(Config)
   return (
     <div className={classes.Login}>
       <BsGithub className={classes.Icon}/>

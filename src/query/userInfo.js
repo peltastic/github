@@ -19,7 +19,7 @@ export const userApi = createApi({
     }),
      repos: builder.query({
         query: (user) => ({
-          url: `users/${user}/repos?type=public&per_page=20`,
+          url: `users/${user}/repos?type=public&per_page=20&sort=updated`,
           headers: {
             Accept: "application/vnd.github.v3+json",
           },

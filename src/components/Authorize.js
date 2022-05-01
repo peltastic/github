@@ -7,9 +7,8 @@ function Authorize() {
   const navigate = useNavigate()
   const search = useLocation().search;
   const code = new URLSearchParams(search).get("code");
-  const { data, error, isLoading, isSuccess } = useAuthenticateQuery(code);
+  const { data, error, isLoading } = useAuthenticateQuery(code);
   useEffect(() => {
-    console.log(data, error, isLoading, isSuccess);
     if (data) {
       sessionStorage.setItem("token", data.access_token)
       navigate("/profile");

@@ -1,7 +1,13 @@
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
+body {
+  font-family: serif;
+}
+@media (max-width: 1000px) {
+  html {
+    font-size: 62.5%;
+  }
+}

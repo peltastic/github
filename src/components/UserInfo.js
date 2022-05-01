@@ -5,10 +5,16 @@ import { GoLocation } from "react-icons/go";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsDot, BsTwitter } from "react-icons/bs";
 import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 
 function UserInfo() {
   const user = useSelector((state) => state.user.userInfo);
-  console.log(user);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    if (user) {
+      setLoading(true);
+    }
+  }, [user]);
   let loadingJsx = (
     <>
       <div className={loadclasses.ImageLoader}></div>
@@ -22,13 +28,17 @@ function UserInfo() {
 
   return (
     <div className={classes.UserInfo}>
-      {user ? (
+      {loading ? (
         <>
-          <div className={classes.ImageContainer}>
-            <img className={classes.ProfilePic} src={user.avatar} alt="" />
+          <div className={classes.Res}>
+            <div className={classes.ImageContainer}>
+              <img className={classes.ProfilePic} src={user.avatar} alt="" />
+            </div>
+            <div>
+              <h1 className={classes.DisplayName}>{user.name}</h1>
+              <p className={classes.UserName}>{user.username}</p>
+            </div>
           </div>
-          <h1 className={classes.DisplayName}>{user.name}</h1>
-          <p className={classes.UserName}>{user.username}</p>
           <button>follow</button>
           <p className={classes.Bio}>{user.bio}</p>
           <div className={classes.FollowersInfo}>
@@ -42,13 +52,13 @@ function UserInfo() {
             </p>
           </div>
           {user.location ? (
-            <div className={classes.Flex}>
+            <div className={classes.Flex} style={{ marginBottom: ".2rem" }}>
               <GoLocation className={classes.Icon} />
               <p>{user.location}</p>
             </div>
           ) : null}
           {user.email ? (
-            <div className={classes.Flex}>
+            <div className={classes.Flex} style={{ marginBottom: ".2rem" }}>
               <AiOutlineMail className={classes.Icon} />
               <p>{user.email}</p>
             </div>
@@ -56,7 +66,9 @@ function UserInfo() {
           {user.twitter ? (
             <div className={classes.Flex}>
               <BsTwitter className={classes.Icon} />
-              <p>@{user.twitter}</p>
+              <p>
+                <span style={{ fontSize: ".7rem" }}>@</span> {user.twitter}
+              </p>
             </div>
           ) : null}
         </>

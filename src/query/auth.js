@@ -4,7 +4,7 @@ export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
     baseUrl:
-      "https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token",
+      "https://peltastic-cors.herokuapp.com/https://github.com/login/oauth/access_token",
   }),
   endpoints: (builder) => ({
     authenticate: builder.query({

@@ -1,5 +1,21 @@
 .Repos {
-    border-top: 1px solid #747373;
-    border-bottom: 1px solid #747373;
-    width: 65%;
+    border-bottom: 1px solid #bdbcbca4;
+    flex: 0 0 65%;
+    padding-right: 5rem;
 }
+
+@media (max-width: 1300px) {
+    .Repos {
+        padding-right: 2rem;
+    }
+}
+@media (max-width: 800px) {
+    .Repos {
+        flex: 0 0 90%;
+    }
+}
+
+
+
+
+

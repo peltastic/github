@@ -1,13 +1,13 @@
-import classes from "../styles/header.module.css";
+import classes from "../styles/headmobile.module.css";
 import { BsBook } from "react-icons/bs";
 import { RiGitRepositoryLine } from "react-icons/ri";
 import { AiOutlineProject, AiOutlineStar } from "react-icons/ai";
 import { FiPackage } from "react-icons/fi";
 import { useSelector } from "react-redux";
-function Header() {
+function HeaderMobile() {
   const user = useSelector((state) => state.user.userInfo);
   return (
-    <div className={classes.Header}>
+    <div className={classes.HeaderMobile}>
       <ul>
         <li>
           <button>
@@ -45,4 +45,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderMobile;

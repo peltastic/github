@@ -29,16 +29,20 @@ function FilterOptions() {
   const onFilter = (action) => {
     dispatch(setLanguage(action));
     setShow(!show);
+    setPosition("");
   };
   const filterType = (action) => {
     dispatch(setType(action));
     setShow(!show);
+    setPosition("");
   };
   const onSearch = (e) => {
     dispatch(setSearchValue(e.target.value));
   };
   const onSetSort = (action) => {
     dispatch(setSort(action));
+    setShow(!show);
+    setPosition("");
   };
   let filterOptions;
   if (position === "type") {

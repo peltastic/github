@@ -10,11 +10,17 @@ import { useState, useEffect } from "react";
 function UserInfo() {
   const user = useSelector((state) => state.user.userInfo);
   const [loading, setLoading] = useState(false);
+  const [checkUser, setCheckUser] = useState("");
   useEffect(() => {
     if (user) {
-      setLoading(true);
+      setCheckUser(true);
     }
   }, [user]);
+  useEffect(() => {
+    if (checkUser) {
+      setLoading(true);
+    }
+  }, [checkUser]);
   let loadingJsx = (
     <>
       <div className={loadclasses.ImageLoader}></div>

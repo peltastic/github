@@ -12,11 +12,15 @@ function Repos() {
   const user = useSelector((state) => state.user);
   const lang = useSelector((state) => state.filter.language);
   const type = useSelector((state) => state.filter.type);
+  const sort = useSelector((state) => state.filter.sort);
   const searchValue = useSelector((state) => state.filter.search_value);
   const [repos, setRepos] = useState([]);
   useEffect(() => {
-    getRepo();
-  }, [user.userInfo.username]);
+    if (sort) {
+      console.log(sort);
+      getRepo(sort);
+    }
+  }, [user.userInfo.username, sort]);
   useEffect(() => {
     onFilter();
   }, [lang]);
@@ -27,6 +31,19 @@ function Repos() {
   useEffect(() => {
     filterType();
   }, [type]);
+
+  const getRepo = async (sortVal) => {
+    if (user.userInfo.username) {
+      const result = await dispatch(
+        userApi.endpoints.repos.initiate({
+          user: user.userInfo.username,
+          sortval: sortVal,
+        })
+      );
+      dispatch(setUserRepo(result.data));
+      setRepos(result.data);
+    }
+  };
 
   const onSearch = () => {
     const result = [];
@@ -65,31 +82,64 @@ function Repos() {
       setRepos(user.userRepo);
     }
   };
+  let loadingJsx = (
+    <div style={{ borderBottom: "1px solid #e9e8e8" }}>
+      <div
+        style={{
+          width: "15rem",
+          height: ".5rem",
+          marginTop: "1rem",
+          backgroundColor: "#e9e8e8",
+          marginBottom: ".5rem",
+        }}
+      ></div>
+      <div
+        style={{
+          width: "20rem",
+          height: ".4rem",
+          backgroundColor: "#e9e8e8",
+          marginBottom: "1rem",
+        }}
+      ></div>
+      <div
+        style={{
+          width: "25rem",
+          height: ".5rem",
+          backgroundColor: "#e9e8e8",
+          marginBottom: "1rem",
+        }}
+      ></div>
+    </div>
+  );
 
-  const getRepo = async () => {
-    if (user.userInfo.username) {
-      const result = await dispatch(
-        userApi.endpoints.repos.initiate(user.userInfo.username)
-      );
-      dispatch(setUserRepo(result.data));
-      setRepos(result.data);
-    }
-  };
   return (
     <div className={classes.Repos}>
       <FilterOptions />
-      {repos.map((el, index) => (
-        <Repo
-          key={index}
-          name={el.name}
-          desc={el.description}
-          lang={el.language}
-          stars={el.stargazers_count}
-          forks={el.forks_count}
-          isForked={el.fork}
-          updatedAt={el.updated_at}
-        />
-      ))}
+      {repos.length > 1 ? (
+        <>
+          {repos.map((el, index) => (
+            <Repo
+              key={index}
+              name={el.name}
+              desc={el.description}
+              lang={el.language}
+              stars={el.stargazers_count}
+              forks={el.forks_count}
+              isForked={el.fork}
+              updatedAt={el.updated_at}
+            />
+          ))}
+        </>
+      ) : (
+        <>
+          {loadingJsx}
+          {loadingJsx}
+          {loadingJsx}
+          {loadingJsx}
+          {loadingJsx}
+          {loadingJsx}
+        </>
+      )}
     </div>
   );
 }

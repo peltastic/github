@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   language: "all",
   search_value: "",
-  type: ""
+  type: "all",
+  sort: "updated"
 };
 
 export const filterSlice = createSlice({
@@ -18,9 +19,12 @@ export const filterSlice = createSlice({
     },
     setType: (state, action) => {
         state.type = action.payload
+    },
+    setSort: (state, action) => {
+      state.sort = action.payload
     }
   },
 });
 
-export const { setLanguage, setSearchValue, setType } = filterSlice.actions;
+export const { setLanguage, setSearchValue, setType, setSort } = filterSlice.actions;
 export default filterSlice.reducer;

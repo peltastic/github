@@ -1,5 +1,5 @@
 import classes from "../styles/repo.module.css";
-import { AiOutlineStar } from "react-icons/ai";
+import { BsStar } from "react-icons/bs";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { VscRepoForked } from "react-icons/vsc";
 import { timeDifferenceForDate } from "../utils/generateTime";
@@ -17,6 +17,8 @@ function Repo(props) {
     color = "#1a506f";
   } else if (props.lang === "CSS") {
     color = "#2d4655";
+  } else {
+    color = "yellow";
   }
 
   return (
@@ -37,7 +39,7 @@ function Repo(props) {
           </p>
           {props.stars ? (
             <div className={classes.Star}>
-              <AiOutlineStar />
+              <BsStar />
               <p>{props.stars}</p>
             </div>
           ) : null}
@@ -52,8 +54,10 @@ function Repo(props) {
       </div>
       <div className={classes.StarBtn}>
         <button>
-          <AiOutlineStar />
+          <BsStar />
           <span>Star</span>
+        </button>
+        <button>
           <IoMdArrowDropdown />
         </button>
       </div>

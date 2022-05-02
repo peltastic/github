@@ -1,4 +1,3 @@
-// https://api.github.com/users
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const userApi = createApi({
@@ -15,16 +14,18 @@ export const userApi = createApi({
           Accept: "application/json",
         },
       }),
-     
     }),
-     repos: builder.query({
-        query: (user) => ({
-          url: `users/${user}/repos?type=public&per_page=20&sort=updated`,
+    repos: builder.query({
+      query: (arg) => {
+        const { user, sortval } = arg;
+        return {
+          url: `users/${user}/repos?type=public&per_page=20&sort=${sortval}`,
           headers: {
             Accept: "application/vnd.github.v3+json",
           },
-        }),
-      }),
+        };
+      },
+    }),
   }),
 });
 

@@ -28,9 +28,11 @@ function FilterOptions() {
   };
   const onFilter = (action) => {
     dispatch(setLanguage(action));
+    setShow(!show);
   };
   const filterType = (action) => {
     dispatch(setType(action));
+    setShow(!show);
   };
   const onSearch = (e) => {
     dispatch(setSearchValue(e.target.value));

@@ -17,7 +17,6 @@ function Repos() {
   const [repos, setRepos] = useState([]);
   useEffect(() => {
     if (sort) {
-      console.log(sort);
       getRepo(sort);
     }
   }, [user.userInfo.username, sort]);
@@ -48,7 +47,7 @@ function Repos() {
   const onSearch = () => {
     const result = [];
     if (searchValue) {
-      for (const el of repos) {
+      for (const el of user.userRepo) {
         if (el.name.includes(searchValue)) {
           result.push(el);
         }
